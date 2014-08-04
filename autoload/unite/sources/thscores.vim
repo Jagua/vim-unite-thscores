@@ -140,7 +140,7 @@ function! s:unite_custom_settings()
   call unite#custom#profile('source/thscores', 'substitute_patterns', {
   \ 'pattern' : '^\%(th128\|dai\)',
   \ 'subst' : '【大】',
-  \ 'priority' : 1,
+  \ 'priority' : 2,
   \ })
   call unite#custom#profile('source/thscores', 'substitute_patterns', {
   \ 'pattern' : '^\%(th13\|kami\)',
