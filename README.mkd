@@ -11,9 +11,9 @@ This plugin depends on vital.vim and my Yahoo pipe(s).
 If you use NeoBundle, you write the following settings to your .vimrc.
 
 ```vim
-        NeoBundle 'Jagua/vim-unite-thscores', {
-        \         'depends' : ['vim-jp/vital.vim'],
-        \         'unite_sources' : 'thscores',
+        NeoBundleLazy 'Jagua/vim-unite-thscores', {
+        \             'depends' : ['vim-jp/vital.vim'],
+        \             'unite_sources' : 'thscores',
         \ }
 ```
 
@@ -22,9 +22,9 @@ If you use NeoBundle, you write the following settings to your .vimrc.
 
 
 ```vim
-        NeoBundle 'Jagua/vim-unite-thscores', {
-        \         'depends' : ['vim-jp/vital.vim', 'Shougo/vimproc'],
-        \         'unite_sources' : 'thscores',
+        NeoBundleLazy 'Jagua/vim-unite-thscores', {
+        \             'depends' : ['vim-jp/vital.vim', 'Shougo/vimproc'],
+        \             'unite_sources' : 'thscores',
         \ }
         if neobundle#tap('vim-unite-thscores') "{{{
           nnoremap ,ths :<C-u>Unite thscores -keep-focus -no-quit -start-insert<CR>
