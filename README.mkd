@@ -27,8 +27,8 @@ If you use NeoBundle, you write the following settings to your .vimrc.
         \             'unite_sources' : 'thscores',
         \ }
         if neobundle#tap('vim-unite-thscores') "{{{
-          nnoremap ,ths :<C-u>Unite thscores -keep-focus -no-quit -start-insert<CR>
-          nnoremap ,thv :<C-u>Unite thscores -keep-focus -no-quit -auto-preview<CR>
+          nnoremap ,ths :<C-u>Unite thscores -profile-name=source/thscores -keep-focus -no-quit -start-insert<CR>
+          nnoremap ,thv :<C-u>Unite thscores -profile-name=source/thscores -keep-focus -no-quit -auto-preview<CR>
           function! neobundle#tapped.hooks.on_source(bundle)
             let g:thscores#system_function = 'vimproc#system'
           endfunction

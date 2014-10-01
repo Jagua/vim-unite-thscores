@@ -106,6 +106,9 @@ call unite#define_kind(s:kind)
 
 
 function! s:unite_custom_settings()
+  call unite#custom#profile('source/thscores', 'context', {
+  \ 'profile_name' : 'source/thscores',
+  \ })
   call unite#custom#alias('thscores', 'preview', 'info')
   call unite#custom#profile('source/thscores', 'substitute_patterns', {
   \ 'pattern' : '^\%(th06\|beni\)',
