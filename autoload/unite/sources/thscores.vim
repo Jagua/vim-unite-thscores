@@ -72,12 +72,15 @@ let s:V = vital#of('vital')
 
 function! s:source.gather_candidates(args, context)
   let s:item = s:V.import('Web.XML').parseURL(s:rss_url).childNode('channel').childNodes('item')
+  function! s:getval(node)
+    return empty(a:node) ? '' : a:node.value()
+  endfunction
   return map(copy(s:item), '{
-  \ "word" : v:val.child[1].child[0],
-  \ "action__path" : v:val.child[1].child[0],
+  \ "word" : s:getval(v:val.childNode("title")),
+  \ "action__path" : s:getval(v:val.childNode("title")),
   \ "kind" : "thscores",
-  \ "thscore__replayUrl" : v:val.child[3].child[0],
-  \ "thscore__comment" : v:val.child[5].child[0],
+  \ "thscore__replayUrl" : s:getval(v:val.childNode("link")),
+  \ "thscore__comment" : s:getval(v:val.childNode("description")),
   \ }')
 endfunction
 
