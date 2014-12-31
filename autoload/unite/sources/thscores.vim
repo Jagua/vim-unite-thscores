@@ -55,6 +55,10 @@ let s:source = {
 \     'description' : 'show a comment.',
 \     'is_quit' : 0,
 \   },
+\   'translate_info' : {
+\     'description' : 'show a translated comment.',
+\     'is_quit' : 0,
+\   },
 \   'replayDL' : {
 \     'description' : 'download a replay file.',
 \     'is_quit' : 0,
@@ -90,6 +94,13 @@ endfunction
 
 function! s:kind.action_table.info.func(candidate)
   echo a:candidate.thscore__comment
+endfunction
+
+
+function! s:kind.action_table.translate_info.func(candidate)
+  echo mstrans#translate(a:candidate.thscore__comment,
+  \                      '',
+  \                      get(g:, 'mstrans_to', 'ja'))
 endfunction
 
 
