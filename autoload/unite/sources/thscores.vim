@@ -169,6 +169,11 @@ function! s:unite_custom_settings()
   \ 'subst' : '【輝】',
   \ 'priority' : 1,
   \ })
+  call unite#custom#profile('source/thscores', 'substitute_patterns', {
+  \ 'pattern' : '^\%(th15\|kon\)',
+  \ 'subst' : '【紺】',
+  \ 'priority' : 1,
+  \ })
 endfunction
 
 
